@@ -19,7 +19,7 @@ Select(driver.find_element(By.NAME, 'CompanyCountry')).select_by_visible_text('U
 # driver.find_element(By.XPATH, "//select[@name='CompanyEmployees']/option[text()='101 - 500 employees']").click()
 # driver.find_element(By.XPATH, "//select[@name='CompanyCountry']/option[text()='United Kingdom']").click()
 
-driver.execute_script("arguments[0].click();", driver.find_element(By.ID, 'SubscriptionAgreement'))
+driver.find_element(By.XPATH, "//div[@class='checkbox-ui']").click()
 
 driver.find_element(By.NAME, 'start my free trial').click()
 
