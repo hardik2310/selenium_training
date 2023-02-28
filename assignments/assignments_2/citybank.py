@@ -24,8 +24,8 @@ driver.find_element(By.ID, "citiCard3").send_keys("8887")
 driver.find_element(By.ID, "citiCard4").send_keys("9998")
 driver.find_element(By.ID, "cvvnumber").send_keys("123")
 
+# driver.execute_script("document.querySelector('#bill-date-long').value='23/02/2023'")
 driver.find_element(By.ID, "bill-date-long").click()
-
 Select(driver.find_element(By.CLASS_NAME, "ui-datepicker-year")).select_by_value('2022')
 Select(driver.find_element(By.CLASS_NAME, "ui-datepicker-month")).select_by_visible_text('Apr')
 driver.find_element(By.LINK_TEXT, "14").click()
