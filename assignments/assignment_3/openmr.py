@@ -46,7 +46,9 @@ driver.switch_to.alert.accept()
 
 time.sleep(3)
 
-driver.find_element(By.XPATH, '//div[@class=\'closeDlgIframe\']').click()
+birthday_popup = driver.find_elements(By.XPATH, '//div[@class=\'closeDlgIframe\']')
+if len(birthday_popup) > 0:
+    birthday_popup[0].click()
 
 patient_name = driver.find_element(By.XPATH, '//*[@id="attendantData"]//a/span').text
 print('\n\nPatient Name :: ', patient_name)

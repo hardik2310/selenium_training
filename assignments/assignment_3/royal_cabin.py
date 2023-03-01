@@ -8,9 +8,9 @@ driver.implicitly_wait(5)
 
 driver.get("https://www.royalcaribbean.com/")
 
-# popup_dialogue = driver.find_element(By.XPATH, "//div[contains(@class,'notification-banner__close')]")
-# if popup_dialogue.is_displayed():
-#     popup_dialogue.click()
+popup_dialogue = driver.find_elements(By.XPATH, "//div[contains(@class,'notification-banner__close')]")
+if len(popup_dialogue) > 0:
+    popup_dialogue[0].click()
 
 driver.find_element(By.ID, "rciHeaderSignIn").click()
 # driver.find_element(By.LINK_TEXT, "Create an account").click()
@@ -31,7 +31,7 @@ driver.find_element(By.XPATH, '//div/span[contains(text(),"Country/Region of res
 driver.find_element(By.XPATH, '//span[normalize-space(text())="India"]').click()
 
 driver.find_element(By.XPATH, '//*[@data-placeholder="Email address"]').send_keys("hardik.gosai@gmail.com")
-driver.find_element(By.XPATH, '//*[@data-placeholder="Create new password"]').send_keys("xyz123")
+driver.find_element(By.XPATH, '//*[@data-placeholder="Create new password"]').send_keys("Xyz@123456")
 
 driver.find_element(By.XPATH, '//div/span[contains(text(),"Select one security question")]').click()
 driver.find_element(By.XPATH, '//span[contains(text(),"What was your first car\'s make or model?")]').click()
@@ -39,7 +39,7 @@ driver.find_element(By.XPATH, '//*[@data-placeholder="Answer"]').send_keys("Maru
 
 driver.find_element(By.XPATH, '//div[@id="agreements"]/../mat-checkbox').click()
 
-driver.find_element(By.XPATH, '//button[contains(text(),\'Done\')]').click()
+driver.find_element(By.XPATH, '//button[contains(text(), \'Done\')]').click()
 
 time.sleep(3)
 driver.quit()
